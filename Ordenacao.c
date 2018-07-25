@@ -8,9 +8,9 @@ void Imprime(int array[], int tam);
 int main(){
 
     int opcao, resp;
-    int array1[10] = {0,1,4,6,8,9,10,14,18,22};
-    int array2[10] = {2,5,8,9,10,20,18,17,16,13};
-    int array3[10] = {20,18,16,15,12,9,7,5,3,2};
+    int array1[N] = {0,1,4,6,8,9,10,14,18,22};
+    int array2[N] = {2,5,8,9,10,20,18,17,16,13};
+    int array3[N] = {20,18,16,15,12,9,7,5,3,2};
 
     printf("\tAlgoritmos de Ordenação:\n1- Selection Sort\n2- Insertion Sort\n");
     scanf("%d", &resp);
@@ -63,7 +63,8 @@ int main(){
                 Imprime(array3, N);
                 break;
         }
-    }
+    }else
+        printf("Opção Inválida\n");
     
 }
 
