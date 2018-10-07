@@ -70,8 +70,6 @@ int main(){
 		}
 	}
 
-	//exibevector(grafo);
-
 	//Adicionando os adjacentes ao vertice inicialS
 	for(int i = 0; i < grafo.size(); i++){
 			if(grafo[i].origem == 0){
@@ -92,9 +90,8 @@ int main(){
 	
 	bool auxiliar = false;
 	int t = 0;
-	//exibevector(grafo);
+
 	while(true){
-		//COMO INSERIR NO AUXILIAR SOMENTE OS VERTICES SEGUROS??????????
 		for(int i = 0; i < grafo.size(); i++){
 			if(grafo[i].origem == indice){
 				aux.push_back(grafo[i]);
@@ -104,7 +101,7 @@ int main(){
 		sort(aux.begin(), aux.end(), compara);
 		
 		if(aux[0].peso < estimativa[aux[0].destino]){
-			estimativa[aux[0].destino] = aux[0].peso;
+			estimativa[aux[0].destino] = aux[0].peso + estimativa[pai[aux[0].origem]];
 			pai[aux[0].destino] = aux[0].origem;
 			solucao.push_back(aux[0]);
 			indice = aux[0].destino;
